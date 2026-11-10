@@ -58,45 +58,41 @@ body{
 
 /* ── SIDEBAR ── */
 .sidebar{
-  position:fixed; left:0; top:0; bottom:0; width:220px;
-  background:rgba(13,13,24,0.85);
-  backdrop-filter:blur(20px);
+  position:fixed; left:0; top:0; bottom:0; width:240px;
+  background:var(--bg2);
   border-right:1px solid var(--border);
-  display:flex; flex-direction:column; padding:2rem 0;
+  border-radius:0 20px 20px 0;
+  display:flex; flex-direction:column; padding:2.5rem 1.5rem;
   z-index:100; transition:transform 0.3s ease;
+  box-shadow:4px 0 30px rgba(0,0,0,0.3);
 }
-.sidebar-logo{padding:0 1.5rem 2rem; border-bottom:1px solid var(--border); margin-bottom:1rem;}
-.logo-initials{
-  width:44px; height:44px; background:var(--accent); border-radius:12px;
-  display:flex; align-items:center; justify-content:center;
-  font-family:var(--font-head); font-weight:700; font-size:17px;
-  color:#fff; margin-bottom:0.75rem;
-  box-shadow:0 0 24px var(--glow);
-}
-.logo-name{font-family:var(--font-head); font-size:13px; font-weight:600; color:var(--fg); line-height:1.3;}
-.logo-role{font-size:11px; color:var(--fg3); font-family:var(--font-mono); margin-top:2px;}
-.nav-list{list-style:none; flex:1; padding:0 0.75rem;}
+.sidebar-logo{display:none;}
+.logo-initials{display:none;}
+.logo-name{display:none;}
+.logo-role{display:none;}
+.nav-list{list-style:none; flex:1; padding:0; display:flex; flex-direction:column; gap:4px;}
 .nav-item a{
-  display:flex; align-items:center; gap:10px;
-  padding:0.65rem 0.75rem; border-radius:8px;
+  display:flex; align-items:center; gap:14px;
+  padding:0.9rem 1.2rem; border-radius:12px;
   text-decoration:none; color:var(--fg2);
-  font-size:13.5px; font-weight:500;
-  transition:all 0.2s; margin-bottom:2px; border:1px solid transparent;
+  font-size:15px; font-weight:500;
+  transition:all 0.2s; border:none;
+  letter-spacing:0.01em;
 }
-.nav-item a:hover,.nav-item a.active{background:var(--glow2); color:var(--fg); border-color:var(--border);}
-.nav-item a.active{color:var(--accent2);}
-.nav-icon{width:16px; height:16px; opacity:0.6; flex-shrink:0;}
+.nav-item a:hover{background:var(--bg3); color:var(--fg);}
+.nav-item a.active{background:var(--bg3); color:var(--fg); font-weight:600;}
+.nav-icon{width:18px; height:18px; opacity:0.7; flex-shrink:0;}
 .nav-item a.active .nav-icon,.nav-item a:hover .nav-icon{opacity:1;}
-.nav-socials{padding:1rem 1.5rem 0.5rem; border-top:1px solid var(--border); display:flex; gap:8px; flex-wrap:wrap;}
+.nav-socials{padding:1.5rem 0 0; border-top:1px solid var(--border); display:flex; gap:10px; flex-wrap:wrap;}
 .social-btn{
-  width:32px; height:32px; border-radius:8px; border:1px solid var(--border);
+  width:36px; height:36px; border-radius:50%; border:1px solid var(--border);
   display:flex; align-items:center; justify-content:center;
-  color:var(--fg3); text-decoration:none; transition:all 0.2s; font-size:13px; background:none; cursor:pointer;
+  color:var(--fg3); text-decoration:none; transition:all 0.2s; font-size:14px; background:var(--bg3); cursor:pointer;
 }
 .social-btn:hover{border-color:var(--accent); color:var(--accent2); background:var(--glow2);}
 
 /* ── MAIN ── */
-.main{margin-left:220px; min-height:100vh; position:relative; z-index:1;}
+.main{margin-left:240px; min-height:100vh; position:relative; z-index:1;}
 section{padding:5rem 3.5rem; border-bottom:1px solid var(--border);}
 .section-eyebrow{
   font-family:var(--font-mono); font-size:11px; color:var(--accent);
@@ -348,11 +344,6 @@ footer{padding:2rem 3.5rem; text-align:center; border-top:1px solid var(--border
 </div>
 
 <nav class="sidebar" id="sidebar">
-  <div class="sidebar-logo">
-    <div class="logo-initials">TL</div>
-    <div class="logo-name" style="display:none"></div>
-    <div class="logo-role" style="display:none"></div>
-  </div>
   <ul class="nav-list">
     <li class="nav-item"><a href="#home" class="active" onclick="setActive(this)"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Home</a></li>
     <li class="nav-item"><a href="#about" onclick="setActive(this)"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>About</a></li>
@@ -404,7 +395,7 @@ footer{padding:2rem 3.5rem; text-align:center; border-top:1px solid var(--border
 
     <div class="about-paras">
       <p class="about-p">
-        I'm a Computer Engineering undergraduate at the University of Peradeniya, driven by one belief — 
+        I'm a Computer Engineering undergraduate at the University of Peradeniya, driven by one belief- 
         technology is most powerful when it solves problems people actually live with. 
         From building real-time IoT systems that monitor crops in the field, to designing emergency 
         response networks that connect first responders within seconds, my work sits at the intersection 
@@ -412,7 +403,7 @@ footer{padding:2rem 3.5rem; text-align:center; border-top:1px solid var(--border
         embedded systems, cloud infrastructure, and machine learning to every project I take on.
       </p>
       <p class="about-p">
-        Beyond the code, I'm fascinated by the bigger picture — how intelligent systems can predict 
+        Beyond the code, I'm fascinated by the bigger picture - how intelligent systems can predict 
         failures before they happen, how edge computing can bring AI to places with no reliable internet, 
         and how well-designed software can quietly transform how communities work, travel, and stay safe. 
         I thrive in collaborative, fast-moving environments where curiosity is a skill and shipping 
