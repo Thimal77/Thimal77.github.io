@@ -133,7 +133,7 @@ h2.section-title{
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)}}
 
 .hero-name{
-  font-family:var(--font-head); font-size:clamp(2rem,3.5vw,3.4rem);
+  font-family:var(--font-head); font-size:clamp(2.8rem,4.5vw,4.6rem);
   font-weight:700; letter-spacing:-0.03em; line-height:1.1;
   margin-bottom:0.5rem; color:var(--fg); white-space:nowrap;
 }
@@ -168,7 +168,7 @@ h2.section-title{
 @keyframes blink{0%,100%{opacity:1} 50%{opacity:0}}
 
 .hero-bio{
-  color:var(--fg2); font-size:14px; line-height:1.8;
+  color:var(--fg2); font-size:16px; line-height:1.85;
   max-width:520px; margin-bottom:2rem;
 }
 .hero-cta{display:flex; gap:12px; flex-wrap:wrap; align-items:center;}
@@ -194,7 +194,7 @@ h2.section-title{
 /* ── HERO PHOTO ── */
 .hero-photo{flex-shrink:0; position:relative; z-index:1;}
 .hero-photo img{
-  width:300px; height:380px; object-fit:cover;
+  width:255px; height:315px; object-fit:cover;
   border-radius:24px; border:1px solid rgba(124,106,255,0.3);
   display:block;
   box-shadow:0 0 60px rgba(124,106,255,0.2), 0 20px 60px rgba(0,0,0,0.5);
@@ -350,8 +350,8 @@ footer{padding:2rem 3.5rem; text-align:center; border-top:1px solid var(--border
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-logo">
     <div class="logo-initials">TL</div>
-    <div class="logo-name">Thimal Liyanage</div>
-    <div class="logo-role">// undergraduate</div>
+    <div class="logo-name" style="display:none"></div>
+    <div class="logo-role" style="display:none"></div>
   </div>
   <ul class="nav-list">
     <li class="nav-item"><a href="#home" class="active" onclick="setActive(this)"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Home</a></li>
